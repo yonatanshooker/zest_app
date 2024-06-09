@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  github-service:
+    build: ./github-service
+    container_name: github-service
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+
+  users-service:
+    build: ./users-service
+    container_name: users-service
+    command: uvicorn main:app --host 0.0.0.0 --port 8001
+    ports:
+      - "8001:8001"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+    networks:
+      - app-network
+
+  dashboard-service:
+    build: ./dashboard-service
+    container_name: dashboard-service
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+  redis:
+    image: "redis:alpine"
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: overlay
