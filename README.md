@@ -47,7 +47,7 @@ http://localhost:3000/
 http://localhost:8000/docs
 ```
 
-[Users service](http://localhost:8000/docs):
+[Users service](http://localhost:8001/docs):
 ```
 http://localhost:8001/docs
 ```
