@@ -1,5 +1,4 @@
 # GitHub Dashboard Microservices
-# GitHub Dashboard Microservices
 
 This project sets up a microservices architecture for a GitHub dashboard application using Docker Swarm. The services include:
 - `github-service`: Fetches top-rated GitHub repositories.
