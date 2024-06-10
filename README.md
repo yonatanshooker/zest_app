@@ -28,6 +28,19 @@ docker compose -f stack.yml -p zest_app up -d
 ```
 open the [dashboard](http://localhost:3000/)
 
-```url
+```
 http://localhost:3000/
+```
+
+### fast API doc pages:
+
+
+[GitHub service](http://localhost:8000/docs):
+```
+http://localhost:8000/docs
+```
+
+[Users service](http://localhost:8000/docs):
+```
+http://localhost:8001/docs
 ```
