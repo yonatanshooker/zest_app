@@ -22,10 +22,17 @@ If Docker Swarm is not already initialized on your machine, run:
 docker swarm init
 ```
 
-Compose and spin up services
+Compose and spin up services:
 ```bash
 docker compose -f stack.yml -p zest_app up -d
 ```
+
+to redeploy:
+```bash
+docker compose -f docker-compose.yml -p zest_app up -d
+```
+
+
 open the [dashboard](http://localhost:3000/)
 
 ```
