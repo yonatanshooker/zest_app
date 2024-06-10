@@ -33,7 +33,7 @@ const App = () => {
 
   const removeFavorite = async (repo) => {
     // Assuming there's an endpoint for removing a favorite
-    await axios.delete(`http://localhost:8001/favorites/${userId}/${repo.name}`);
+    await axios.delete(`http://localhost:8001/favorites/${userId}/${repo.id}`);
     setFavorites(favorites.filter(fav => fav.id !== repo.id));
   };
 

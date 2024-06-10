@@ -41,7 +41,7 @@ async def get_top_repositories(per_page: int = 30, page: int = 1):
             response_item = {
                 "name": item["name"],
                 "stargazers_count": item["stargazers_count"],
-                "id": item["id"],
+                "id": str(item["id"]),
                 "url": item["url"]}
             response_items.append(response_item)
 
