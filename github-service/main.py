@@ -23,11 +23,13 @@ GITHUB_API_URL = "https://api.github.com/search/repositories"
 
 
 @app.get("/top-repositories/")
-async def get_top_repositories():
+async def get_top_repositories(per_page: int = 30, page: int = 1):
     params = {
         "q": "stars:>1",
         "sort": "stars",
-        "order": "desc"
+        "order": "desc",
+        "per_page": per_page,
+        "page": page
     }
     async with httpx.AsyncClient() as client:
         response = await client.get(GITHUB_API_URL, params=params)
